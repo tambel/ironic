@@ -294,6 +294,7 @@ class SessionCache(object):
         if 'root_prefix' in self._driver_info:
             sushy_params['root_prefix'] = self._driver_info['root_prefix']
         sushy_params['connect_timeout'] = CONF.redfish.connect_timeout
+        sushy_params['read_timeout'] = CONF.redfish.read_timeout
         conn = sushy.Sushy(
             self._driver_info['address'],
             **sushy_params
